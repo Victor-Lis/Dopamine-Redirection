@@ -22,10 +22,19 @@ const redesToBlock = [
   "facebook",
 ]
 
-const getRandomIndex = () => Math.floor(Math.random()*(urlsToRedirect.length))
-chrome.webNavigation.onCompleted.addListener((details) => {
-  const url = details.url
-  redesToBlock.map((rede) => {
-    if(url.includes(rede)) chrome.tabs.update(details.tabId, { url: urlsToRedirect[getRandomIndex()] });
-  })
-}, filter);
+const getRandomIndex = () => Math.floor(Math.random() * urlsToRedirect.length);
+
+const redirectIfBlocked = (details) => {
+  const url = details.url;
+  redesToBlock.forEach((rede) => {
+    if (url.includes(rede)) {
+      chrome.tabs.update(details.tabId, { url: urlsToRedirect[getRandomIndex()] });
+    }
+  });
+};
+
+// Detecta navegação normal
+chrome.webNavigation.onCompleted.addListener(redirectIfBlocked, filter);
+
+// Detecta mudança de URL sem recarregar a página (exemplo: YouTube Shorts)
+chrome.webNavigation.onHistoryStateUpdated.addListener(redirectIfBlocked, filter);
