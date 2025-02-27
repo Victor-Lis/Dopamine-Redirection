@@ -1,0 +1,28 @@
+{
+  "name": "Dopamine Redirect",
+  "description": "Redireciona você para sites que gerem menos dopamina!",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["activeTab", "scripting","webNavigation"],
+  "action": {
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "js": ["script.js"],
+      "matches": [
+        "https://developer.chrome.com/docs/extensions/*",
+        "https://developer.chrome.com/docs/webstore/*"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "Icon.png",
+    "32": "Icon.png",
+    "48": "Icon.png",
+    "128": "Icon.png"
+  },
+  "background": {
+    "service_worker": "script.js"
+  }
+}
