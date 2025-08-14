@@ -1,0 +1,107 @@
+body {
+  background: linear-gradient(135deg, #1f1f1f 60%, #6d2aff 100%);
+  color: #fff;
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  min-width: 250px;
+}
+
+.container {
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.logo {
+  width: 48px;
+  margin-bottom: 12px;
+}
+
+h2 {
+  color: #6d2aff;
+  margin-bottom: 8px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 18px;
+  background: #6d2aff;
+  color: #fff;
+  border: none;
+  border-radius: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: #4b1cbb;
+}
+
+.button-group {
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+#blockForm {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+#siteInput {
+  flex: 1;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+#blockList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#blockList li {
+  background: #2d2d2d;
+  margin: 4px 0;
+  padding: 6px 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#blockList button {
+  background: none;
+  border: none;
+  color: #ff5c5c;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.tip {
+  font-size: 12px;
+  color: #bbb;
+  margin-top: 12px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.white {
+  color: #fff;
+}
+
+.purple {
+  color: #6d2aff;
+}
+
+.drop-shadow {
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
+}
